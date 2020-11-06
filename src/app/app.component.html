@@ -1,0 +1,46 @@
+<h1>Simulator Sensor</h1>
+<div>
+    <label for="delay">Request delay</label>
+    <input name="delay" id="delay" type="number" placeholder="delay in ms" [(ngModel)]="delay">
+</div>
+<div>
+    <button (click)="onStart()">Start</button>
+    <button (click)="onStop()">Stop</button>
+</div>
+<div>
+    <p>Server response</p>
+    <div *ngIf="responses && responses.length > 0">
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>#ID</td>
+                    <td>Time</td>
+                    <td>Stability</td>
+                    <td>Distance</td>
+                    <td>Speed</td>
+                    <td>Pace</td>
+                    <td>Steps</td>
+                    <td>Reight</td>
+                    <td>Left</td>
+                    <td>Pressure</td>
+                    <td>Arterial</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let response of responses">
+                    <td>{{response.id}}</td>
+                    <td>{{response.temps}}</td>
+                    <td>{{response.stability}}</td>
+                    <td>{{response.distance}}</td>
+                    <td>{{response.vitesse}}</td>
+                    <td>{{response.rythme}}</td>
+                    <td>{{response.nbr_pas}}</td>
+                    <td>{{response.nbr_appui_droit}}</td>
+                    <td>{{response.nbr_appui_gauche}}</td>
+                    <td>{{response.quantite_pression}}</td>
+                    <td>{{response.pression_arterielle}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
